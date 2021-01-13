@@ -4,7 +4,7 @@ const { DB_URI } = require("./config");
 
 const client = new Client({
   connectionString: DB_URI,
-  // ssl: true
+  ssl: true
 });
 
 client.connect();
