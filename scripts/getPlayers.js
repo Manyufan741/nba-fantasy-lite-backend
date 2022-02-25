@@ -27,9 +27,9 @@ class PlayerAPI {
 
     // Get players and their stats
     static async getPlayers() {
-        const pageInfo = await this.request(`players`, { 'per_page': 100, 'page': 28 });
+        const pageInfo = await this.request(`players`, { 'per_page': 100, 'page': 29 });
         const totalPages = pageInfo.meta.total_pages;
-        for (let i = 28; i <= totalPages; i++) {
+        for (let i = 29; i <= totalPages; i++) {
             try {
                 const res = await this.request(`players`, { 'per_page': 100, 'page': i });
                 const timer = ms => new Promise(res => setTimeout(res, ms));
@@ -48,7 +48,7 @@ class PlayerAPI {
     //Get players' 2019 season stats
     static async getPlayerSeasonAvg(playerId, playerName, playerTeam) {
         try {
-            const playerStats = await this.request(`season_averages`, { 'season': 2020, 'player_ids[]': playerId });
+            const playerStats = await this.request(`season_averages`, { 'season': 2021, 'player_ids[]': playerId });
             // console.log("player stats: ", playerStats.data);
             if (playerStats.data.length !== 0) {
                 await this.writePlayerToDB(playerStats.data[0], playerName, playerTeam);
