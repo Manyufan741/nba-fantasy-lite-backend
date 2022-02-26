@@ -1,6 +1,6 @@
 const axios = require("axios");
 const db = require("../db");
-const BASE_API_URL = 'http://data.nba.net/data/10s/prod/v1/2020/players.json';
+const BASE_API_URL = 'http://data.nba.net/data/10s/prod/v1/2021/players.json';
 
 class ImageAPI {
     // Basic request configuration for easier API request management
